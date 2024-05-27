@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3 Selector Basic</title>
+    <style>
+      /* tbody가 생략되어있는 거라 적용 안됨 */
+      table > tr > th {
+        color: red;
+      }
+
+      /* 이렇게 하거나 */
+      table > tbody > tr > th {
+        color: red;
+      }
+
+      /* 이렇게 하면 됨 */
+      table tr > th {
+        color: blue;
+      }
+
+      td:hover {
+        background-color: aquamarine;
+      }
+      td:active {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>이름</th>
+        <th>지역</th>
+      </tr>
+      <tr>
+        <td>윤인성</td>
+        <td>서울특별시 강서구 내발산동</td>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>서울특별시 강서구 화곡동</td>
+      </tr>
+      <tr>
+        <td>김철수</td>
+        <td>서울특별시 양천구 목동</td>
+      </tr>
+      <tr>
+        <td>김영희</td>
+        <td>서울특별시 강서구 마곡동</td>
+      </tr>
+      <tr>
+        <td>이효석</td>
+        <td>서울특별시 구로구 오류동</td>
+      </tr>
+    </table>
+  </body>
+</html>

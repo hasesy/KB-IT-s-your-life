@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: red;
+      }
+
+      #container {
+        background-color: orange;
+        width: 500px;
+        height: 250px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -125px;
+        margin-left: -250px;
+
+        /* 
+        상자가 아무리 크기가 바껴도 중앙 정렬됨
+        transform: translate(-50%, -50%);
+         */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>요소의 중앙 배치</h1>
+    </div>
+  </body>
+</html>

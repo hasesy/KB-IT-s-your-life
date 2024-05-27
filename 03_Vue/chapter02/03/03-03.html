@@ -1,0 +1,21 @@
+<div id="app">
+  <!-- 여기서 message는 변수명임 -->
+  <!-- input같은 변경 가능성 있는 것은 양방향 v-model 사용 -->
+  <input type="text" v-bind:value="message" />
+  <br />
+  <!-- 바꿀 일 없는 이미지경로같은 건 단방향 v-bind 사용 -->
+  <img v-bind:src="imagePath" />
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        message: 'v-bind 디렉티브',
+        imagePath: 'https://contactsvc.bmaster.kro.kr/photos/18.jpg',
+      };
+    },
+  }).mount('#app');
+</script>

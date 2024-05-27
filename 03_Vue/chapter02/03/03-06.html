@@ -1,0 +1,18 @@
+<div id="app">
+  위의 내용에 동의하십니까?
+  <input type="checkbox" v-model="agree" true-value="yes" false-value="no" />
+  <hr />
+  <span>선택된 값 : {{agree}}</span>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        agree: 'no',
+      };
+    },
+  }).mount('#app');
+</script>

@@ -1,0 +1,15 @@
+<div id="app">
+  <input type="text" v-model="name" />
+  <br />
+  입력한 값: <span>{{name}}</span>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return { name: '' };
+    },
+  }).mount('#app');
+</script>

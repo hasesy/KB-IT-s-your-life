@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="search" />
+      <input type="submit" />
+    </form>
+
+    <!-- GET 전송 방식, 디폴트, 길이 제한이 있음 -->
+    <form method="get">
+      <input type="text" name="search" />
+      <input type="submit" />
+    </form>
+
+    <!-- POST 전송 방식(길이제한 없움, vue할 때 자세히 배울 예정) -->
+    <form method="post">
+      <input type="text" name="search" />
+      <input type="submit" />
+    </form>
+
+    <form>
+      <button>클릭</button>
+    </form>
+
+    <form>
+      <input type="radio" name="click" />
+    </form>
+
+    <form>
+      <input type="checkbox" name="check" />
+    </form>
+
+    <form>
+      <textarea name="intro" cols="30" rows="10"></textarea>
+    </form>
+
+    <select name="fruit">
+      <option value="apple">사과</option>
+      <option value="banana">바나나</option>
+      <option value="grape">포도</option>
+      <option value="peach">복숭아</option>
+      <option value="pineapple">파인애플</option>
+    </select>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- <input> v-model은 한글 처리가 이상함
+그래서 v-bind를 사용하고 이벤트 핸들러에서 속성 데이터에 반영 -->
+
+<div id="app">
+  <input type="text" :value="name" @input="changeName" />
+  <br />
+  이름: <span>{{name}}</span>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        name: '',
+      };
+    },
+    methods: {
+      changeName(e) {
+        this.name = e.target.value;
+      },
+    },
+  }).mount('#app');
+</script>

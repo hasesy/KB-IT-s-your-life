@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+        padding: 10px;
+      }
+      .box:nth-child(1) {
+        float: left;
+      }
+      .box:nth-child(2) {
+        float: right;
+      }
+
+      /* 가운데 공간 만들기 - 왜 overflow: hidden..?
+      = 그냥 외워야 함
+      float left, right 하고 나서 옆이 아닌 아래에
+      글을 쓰고 싶으면 overflow: hidden 해줘야 함 */
+      body > div {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam alias
+      minima, animi consequatur ipsum nam maiores, reiciendis nihil beatae
+      repellendus aperiam totam. Odit ea officia ab quasi voluptates similique
+      labore?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam alias
+      minima, animi consequatur ipsum nam maiores, reiciendis nihil beatae
+      repellendus aperiam totam. Odit ea officia ab quasi voluptates similique
+      labore?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam alias
+      minima, animi consequatur ipsum nam maiores, reiciendis nihil beatae
+      repellendus aperiam totam. Odit ea officia ab quasi voluptates similique
+      labore?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam alias
+      minima, animi consequatur ipsum nam maiores, reiciendis nihil beatae
+      repellendus aperiam totam. Odit ea officia ab quasi voluptates similique
+      labore?
+    </p>
+  </body>
+</html>

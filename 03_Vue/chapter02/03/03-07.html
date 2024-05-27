@@ -1,0 +1,16 @@
+<div id="app">
+  <input v-model.number="num" type="text" /> <br />
+  입력된 수: <span>{{num}}</span>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        num: 0,
+      };
+    },
+  }).mount('#app');
+</script>
