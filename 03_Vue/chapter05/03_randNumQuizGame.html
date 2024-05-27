@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ msg }}</h1>
+      <input v-model.number="inputNum" type="text" />
+      <button @click="checkAnswer">확인</button>
+      <h2>{{ result }}</h2>
+    </div>
+  </body>
+  <script>
+    const vueApp = Vue.createApp({
+      name: '랜덤숫자 맞추기',
+      data() {
+        return {
+          randNum: parseInt(Math.random() * 20),
+          inputNum: 0,
+          msg: '랜덤으로 생성된 숫자를 맞춰보세요.',
+          result: '',
+        };
+      },
+      methods: {
+        checkAnswer() {
+          if (this.randNum > this.inputNum) {
+            this.result = 'Up';
+          } else if (this.inputNum > this.randNum) {
+            this.result = 'Down';
+          } else {
+            this.result = '정답입니다.';
+          }
+
+          // 강사님 코드 - 얼리리턴
+          //   if (this.randNum > this.inputNum) return (this.result = 'Up');
+          //   if (this.inputNum > this.randNum) return (this.result = 'Down');
+
+          //   return (this.result = '정답입니다.');
+        },
+      },
+    }).mount('#app');
+  </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 :style="[bgSkyblue, fontRed]">배경은 하늘색이고, 글자는 빨간색</h1>
+      <h1 :style="[bgOrange, fontwhite]">배경은 오렌지색이고, 글자는 하얀색</h1>
+    </div>
+  </body>
+  <script>
+    const vueApp = Vue.createApp({
+      name: '인라인 스타일',
+      data() {
+        return {
+          bgOrange: { backgroundColor: 'orange' },
+          bgSkyblue: { backgroundColor: 'skyblue' },
+          fontRed: { color: 'red' },
+          fontwhite: { color: 'white' },
+        };
+      },
+    }).mount('#app');
+  </script>
+</html>
