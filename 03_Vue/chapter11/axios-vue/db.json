@@ -1,0 +1,32 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "todo": "졸지 않기",
+      "desc": "오늘 수업 이해해야 돼ㅠ",
+      "done": false
+    },
+    {
+      "id": "2",
+      "todo": "러닝하기",
+      "desc": "4km 이상 가즈아",
+      "done": false
+    },
+    {
+      "id": "cd1e",
+      "todo": "들어가니!?",
+      "desc": "들어갔니?!",
+      "done": false
+    }
+  ],
+  "users": [
+    {
+      "id": "12",
+      "password": "12"
+    },
+    {
+      "id": "hase1206",
+      "password": "1234"
+    }
+  ]
+}

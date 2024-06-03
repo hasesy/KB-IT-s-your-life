@@ -7,7 +7,11 @@
       <router-link to="/">홈페이지</router-link>
       <!-- 스페이스바 한 칸을 의미 - $nbsp -->
       &nbsp;
-      <RouterLink to="/about">라우터란?</RouterLink>
+      <router-link to="/about">라우터란?</router-link>
+      &nbsp;
+      <router-link to="/dynamic/happy">행복하다</router-link>
+      &nbsp;
+      <router-link to="/dynamic/exciting">신난다</router-link>
     </nav>
     <RouterView />
   </div>
