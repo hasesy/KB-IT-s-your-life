@@ -1,22 +1,27 @@
 {
   "todos": [
     {
-      "id": "1",
-      "todo": "졸지 않기",
-      "desc": "오늘 수업 이해해야 돼ㅠ",
+      "id": "c969",
+      "todo": "ㅇㄴㄹㄴㅇㄹㅇ",
+      "done": false,
+      "editing": false
+    },
+    {
+      "id": "cc2b",
+      "todo": "ㅇㄴㅁ",
+      "done": false,
+      "editing": false
+    },
+    {
+      "id": "7421",
+      "todo": "맛있는 거 먹고 싶어",
       "done": false
     },
     {
-      "id": "2",
-      "todo": "러닝하기",
-      "desc": "4km 이상 가즈아",
-      "done": false
-    },
-    {
-      "id": "cd1e",
-      "todo": "들어가니!?",
-      "desc": "들어갔니?!",
-      "done": false
+      "id": "90f1",
+      "todo": "엥",
+      "done": false,
+      "editing": false
     }
   ],
   "users": [
