@@ -1,4 +1,4 @@
-package afternoon.casting;
+package afternoon.poly3;
 
 public class CastingMain {
     public static void main(String[] args) {
