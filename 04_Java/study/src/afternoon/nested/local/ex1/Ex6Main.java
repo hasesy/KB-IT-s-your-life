@@ -22,10 +22,6 @@ public class Ex6Main {
                 randNums[1] = new Random().nextInt(100) + 1;
                 randNums[2] = new Random().nextInt(100) + 1;
 
-                for (int a : randNums) {
-                    System.out.println(a);
-                }
-
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("오늘의 행운 번호를 입력하세요 : ");
                 int input = scanner.nextInt();
