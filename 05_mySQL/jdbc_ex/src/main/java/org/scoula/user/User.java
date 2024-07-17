@@ -11,6 +11,13 @@ public class User {
     private boolean membership;
     private Timestamp signupDate;
 
+    public User(String name, String password, int age, boolean membership) {
+        this.name = name;
+        this.password = password;
+        this.age = age;
+        this.membership = membership;
+    }
+
     public User(String userId, String name, String password, int age, boolean membership) {
         this.userId = userId;
         this.name = name;

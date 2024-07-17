@@ -6,6 +6,25 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class ManageUser {
+    public boolean login(String userId, String password) {
+        Connection conn = JDBCUtil.getConnection();
+
+        String sql = "SELECT * FROM user_table WHERE userId = ? AND password = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            pstmt.setString(2, password);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if(rs.next()) return true;
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
     public void getAllUsers() {
         Connection conn = JDBCUtil.getConnection();
 
@@ -81,16 +100,15 @@ public class ManageUser {
 
     public void searchUsersByName(String namePart) {
         Connection conn = JDBCUtil.getConnection();
+
         String sql = "SELECT * FROM user_table WHERE name LIKE ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            ArrayList<User> users = new ArrayList<>();
-            pstmt.setString(1, namePart);
+            pstmt.setString(1, "%" + namePart + "%");
 
             try (ResultSet rs = pstmt.executeQuery()) {
-                if (!rs.next()) {
-                    System.out.println("해당 철자가 포함된 회원이 존재하지 않습니다.");
-                }
+                ArrayList<User> users = new ArrayList<>();
+
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String userId = rs.getString("userid");
@@ -104,8 +122,38 @@ public class ManageUser {
 
                     users.add(user);
                 }
-                users.forEach(System.out::println);
+
+                if (users.isEmpty()) {
+                    System.out.println("해당 철자가 포함된 회원이 존재하지 않습니다.");
+                } else {
+                    users.forEach(System.out::println);
+                }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void userUpdate(User newUser, int id) {
+        Connection conn = JDBCUtil.getConnection();
+
+        String sql = "UPDATE user_table SET name = ?, password = ?, age = ?, membership = ? WHERE id = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, newUser.getName());
+            pstmt.setString(2, newUser.getPassword());
+            pstmt.setInt(3, newUser.getAge());
+            pstmt.setBoolean(4, newUser.isMembership());
+            pstmt.setInt(5, id);
+
+            int affectedRow = pstmt.executeUpdate();
+            if (affectedRow == 0) {
+                System.out.println("ID가 " + id + "인 회원이 존재하지 않습니다.");
+            } else {
+                System.out.println("ID가 " + id + "인 회원 정보가 성공적으로 업데이트 되었습니다.");
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
