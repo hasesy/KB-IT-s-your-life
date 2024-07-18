@@ -1,0 +1,45 @@
+USE sqldb;
+
+CREATE TABLE tbl1 (
+	a INT PRIMARY KEY,
+    b INT,
+    c INT
+);
+
+SHOW INDEX FROM tbl1;
+
+CREATE TABLE tbl2 (
+	a INT PRIMARY KEY,
+    b INT UNIQUE,
+    c INT UNIQUE,
+    d INT
+);
+
+SHOW INDEX FROM tbl2;
+
+CREATE TABLE tbl3 (
+	a INT UNIQUE,
+    b INT UNIQUE,
+    c INT UNIQUE,
+    d INT
+);
+
+SHOW INDEX FROM tbl3;
+
+CREATE TABLE tbl4 (
+	a INT UNIQUE NOT NULL,
+    b INT UNIQUE,
+    c INT UNIQUE,
+    d INT
+);
+
+SHOW INDEX FROM tbl4;
+
+CREATE TABLE tbl5 (
+	a INT UNIQUE NOT NULL,
+    b INT UNIQUE,
+    c INT UNIQUE,
+    d INT PRIMARY KEY
+);
+
+SHOW INDEX FROM tbl5;
