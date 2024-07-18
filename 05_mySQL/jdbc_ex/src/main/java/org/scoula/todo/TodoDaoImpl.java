@@ -47,6 +47,7 @@ public class TodoDaoImpl implements TodoDao {
                     TodoVo todolist = new TodoVo(id, userId, todo, isCompleted, created);
                     todos.add(todolist);
                 }
+                System.out.println("===== " + userId + "님의 Todo 전체 목록 =====");
                 todos.forEach(System.out::println);
             }
         } catch (SQLException e) {
@@ -74,6 +75,7 @@ public class TodoDaoImpl implements TodoDao {
                     TodoVo todolist = new TodoVo(id, userId, todo, isCompleted, created);
                     todos.add(todolist);
                 }
+                System.out.println("===== " + userId + "님의 Todo 미완료 목록 =====");
 
                 if (todos.isEmpty()) {
                     System.out.println("미완료 목록이 없습니다.");
@@ -105,6 +107,8 @@ public class TodoDaoImpl implements TodoDao {
                     TodoVo todolist = new TodoVo(id, userId, todo, isCompleted, created);
                     todos.add(todolist);
                 }
+                System.out.println("===== " + userId + "님의 Todo 완료 목록 =====");
+
                 if (todos.isEmpty()) {
                     System.out.println("완료 목록이 없습니다.");
                 } else {
