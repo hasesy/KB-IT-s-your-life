@@ -8,6 +8,7 @@ import org.scoula.todo.context.Context;
 import org.scoula.todo.exception.LoginFailException;
 import org.scoula.todo.service.AccountService;
 import org.scoula.todo.service.LoginService;
+import org.scoula.todo.service.TodoService;
 
 import java.sql.SQLException;
 
@@ -18,6 +19,7 @@ public class TodoApp extends App {
 
     LoginService loginService = new LoginService();
     AccountService accountService = new AccountService();
+    TodoService todoService = new TodoService();
 
     @Override
     public void init() {
@@ -27,6 +29,13 @@ public class TodoApp extends App {
         anonymousMenu.add(new MenuItem("종료", this::exit));
 
         userMenu = new Menu();
+        userMenu.add(new MenuItem("목록", todoService::print));
+        userMenu.add(new MenuItem("검색", todoService::search));
+        userMenu.add(new MenuItem("상세", todoService::detail));
+        userMenu.add(new MenuItem("추가", todoService::create));
+        userMenu.add(new MenuItem("수정", todoService::update));
+        userMenu.add(new MenuItem("삭제", todoService::delete));
+
         userMenu.add(new MenuItem("로그아웃", this::logout));
         userMenu.add(new MenuItem("종료", this::exit));
 

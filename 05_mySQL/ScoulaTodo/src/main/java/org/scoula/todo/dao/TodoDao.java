@@ -1,17 +1,30 @@
 package org.scoula.todo.dao;
 
-import org.scoula.todo.domain.Todo;
+import org.scoula.todo.domain.TodoVO;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public interface TodoDao {
-    List<Todo> getList();
+    // 총 데이터 건수
+    int getTotalCount(String userId) throws SQLException;
 
-    Todo getTodo(int id);
+    // Todo 등록
+    int create(TodoVO todo) throws SQLException;
 
-    void add(Todo todo);
+    // Todo 목록 조회
+    List<TodoVO> getList(String userId) throws SQLException;
 
-    void update(Todo todo);
+    // Todo 정보 조회
+    Optional<TodoVO> get(String userId, Long id) throws SQLException;
 
-    void delete(int id);
+    // 검색
+    List<TodoVO> search(String userId, String keyword) throws SQLException;
+
+    // Todo 수정
+    int update(String userId, TodoVO todo) throws SQLException;
+
+    // Todo 삭제
+    int delete(String userId, Long id) throws SQLException;
 }

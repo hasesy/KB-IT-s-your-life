@@ -8,3 +8,9 @@ CREATE TABLE TODO (
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
+
+INSERT INTO todo(title, description, done, userid)
+VALUES ('야구장', '프로야구 경기도 봐야합니다.', false, 'guest'),
+       ('놀기', '노는 것도 중요합니다.', false, 'guest'),
+       ('Vue 학습', 'Vue 학습을 해야 합니다.', false, 'member'),
+       ('ES6 공부', 'ES6 공부를 해야 합니다.', true, 'guest');
