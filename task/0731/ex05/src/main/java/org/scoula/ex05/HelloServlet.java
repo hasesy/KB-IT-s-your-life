@@ -1,4 +1,4 @@
-package org.example.ex05;
+package org.scoula.ex05;
 
 import java.io.*;
 import javax.servlet.http.*;

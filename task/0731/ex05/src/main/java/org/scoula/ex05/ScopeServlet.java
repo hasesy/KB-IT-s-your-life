@@ -1,12 +1,11 @@
-package org.example.ex05;
+package org.scoula.ex05;
 
-import org.example.ex05.domain.Member;
+import org.scoula.ex05.domain.Member;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/scope")
 public class ScopeServlet extends HttpServlet {

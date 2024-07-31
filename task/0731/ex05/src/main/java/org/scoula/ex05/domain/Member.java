@@ -1,4 +1,4 @@
-package org.example.ex05.domain;
+package org.scoula.ex05.domain;
 
 public class Member {
     String name;
