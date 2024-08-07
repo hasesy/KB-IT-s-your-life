@@ -1,9 +1,8 @@
-package org.example.controller;
+package org.example.controller.member.v1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.MemberDtoListV1;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
