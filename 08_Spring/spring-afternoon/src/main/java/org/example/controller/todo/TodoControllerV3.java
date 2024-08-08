@@ -1,7 +1,7 @@
 package org.example.controller.todo;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.dto.TodoDtoListV2;
+import org.example.dto.todo.TodoDtoListV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Slf4j
@@ -21,6 +19,14 @@ public class TodoControllerV3 {
     @Autowired
     public TodoControllerV3(TodoDtoListV2 todoDtoList) {
         this.todoDtoList = todoDtoList;
+    }
+
+    @GetMapping("/show")
+    public String todoShow(Model model) {
+        log.info("========> 할 일 목록 조회 페이지 호출, /todo/v3/show");
+
+        model.addAttribute("todoList", todoDtoList.getList());
+        return "todo-show3";
     }
 
     @GetMapping("/form")
@@ -37,14 +43,6 @@ public class TodoControllerV3 {
 
         model.addAttribute("todoList", todoDtoList.getList());
 
-        return "todo-show3";
-    }
-
-    @GetMapping("/show")
-    public String todoShow(Model model) {
-        log.info("========> 할 일 목록 조회 페이지 호출, /todo/v3/show");
-
-        model.addAttribute("memberList", todoDtoList.getList());
         return "todo-show3";
     }
 }

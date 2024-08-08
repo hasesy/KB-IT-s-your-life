@@ -1,24 +1,18 @@
-package org.example.dto;
+package org.example.dto.member;
+
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemberDtoListV1 {
-    private static MemberDtoListV1 instance;
+@Component
+public class MemberDtoListV2 {
     private List<MemberDto> memberDtoList;
 
-    private MemberDtoListV1() {
+    private MemberDtoListV2() {
         this.memberDtoList = new ArrayList<>();
         this.addList("tetz", "이효석");
         this.addList("siwan", "김시완");
-    }
-
-    public static synchronized MemberDtoListV1 getInstance() {
-        if (instance == null) {
-            instance = new MemberDtoListV1();
-        }
-
-        return instance;
     }
 
     public void addList(String id, String name) {

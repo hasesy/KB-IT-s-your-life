@@ -1,14 +1,13 @@
 package org.example.controller.todo.v2;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.dto.TodoDtoListV2;
+import org.example.dto.todo.TodoDtoListV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @Slf4j
