@@ -5,9 +5,9 @@
     <title>Member Register</title>
 </head>
 <body>
-<%@include file="header.jsp"%>
-<h1>할 일 추가 V3</h1>
-<form method="post" action="/todo/v3/form/save">
+<%@include file="../header.jsp"%>
+<h1>할 일 추가 V2</h1>
+<form method="get" action="/todo/v2/form/save">
     <label for="todo">할 일 : </label>
     <input type="password" id="todo" name="todo" required>
     <br>

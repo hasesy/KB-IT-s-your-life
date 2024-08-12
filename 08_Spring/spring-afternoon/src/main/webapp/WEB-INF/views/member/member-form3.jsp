@@ -6,8 +6,8 @@
     <title>Member Register</title>
 </head>
 <body>
-<%@ include file="header.jsp"%>
-<h1>회원 추가 V2</h1>
+<%@ include file="../header.jsp"%>
+<h1>회원 추가 V3</h1>
 <form method="get" action="/member/v2/form/save">
     <label for="id">아이디 :</label>
     <input type="text" id="id" name="id" required>
