@@ -7,6 +7,7 @@ import org.example.dto.post.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -45,6 +46,19 @@ public class PostController {
         model.addAttribute("postList", searchedList);
 
         return context + "/post-show";
+    }
+
+    @PostMapping("/delete")
+    public String postDelete(@RequestParam("id") String id,
+                             HttpServletRequest request) {
+        log.info("=================> 게시글 삭제 기능 호출, " + request.getRequestURI());
+
+        long postId = Long.parseLong(id);
+        int affectedRows = postRepository.delete(postId);
+
+        if (affectedRows > 0) log.info("삭제 성공");
+
+        return "redirect:/post/show";
     }
 
     // 에러 강제 발생
