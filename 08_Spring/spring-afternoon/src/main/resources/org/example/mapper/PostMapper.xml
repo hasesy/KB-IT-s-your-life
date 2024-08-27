@@ -21,4 +21,14 @@
             </if>
         </where>
     </select>
+
+    <delete id="delete">
+        delete from posts
+        where id=#{id}
+    </delete>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into posts (title, content)
+        values (#{title}, #{content})
+    </insert>
 </mapper>
