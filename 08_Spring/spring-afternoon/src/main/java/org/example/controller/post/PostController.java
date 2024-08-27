@@ -48,18 +48,18 @@ public class PostController {
         return context + "/post-show";
     }
 
-    @PostMapping("/delete")
-    public String postDelete(@RequestParam("id") String id,
-                             HttpServletRequest request) {
-        log.info("=================> 게시글 삭제 기능 호출, " + request.getRequestURI());
-
-        long postId = Long.parseLong(id);
-        int affectedRows = postRepository.delete(postId);
-
-        if (affectedRows > 0) log.info("삭제 성공");
-
-        return "redirect:/post/show";
-    }
+//    @PostMapping("/delete")
+//    public String postDelete(@RequestParam("id") String id,
+//                             HttpServletRequest request) {
+//        log.info("=================> 게시글 삭제 기능 호출, " + request.getRequestURI());
+//
+//        long postId = Long.parseLong(id);
+//        int affectedRows = postRepository.delete(postId);
+//
+//        if (affectedRows > 0) log.info("삭제 성공");
+//
+//        return "redirect:/post/show";
+//    }
 
     // 에러 강제 발생
     @GetMapping("/error")

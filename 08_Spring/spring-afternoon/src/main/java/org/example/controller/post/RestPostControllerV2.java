@@ -43,18 +43,18 @@ public class RestPostControllerV2 {
         return searchedList;
     }
 
-    @DeleteMapping("/delete")
-    public String postDelete(@RequestParam("id") String id,
-                             HttpServletRequest request) {
-        log.info("================> 게시글 삭제 기능 호출, " + request.getRequestURI());
-
-        long postId = Long.parseLong(id);
-        int affectRows = postRepository.delete(postId);
-
-        if (affectRows > 0) log.info("삭제 성공");
-
-        return "redirect:/post/v1/show";
-    }
+//    @DeleteMapping("/delete")
+//    public String postDelete(@RequestParam("id") String id,
+//                             HttpServletRequest request) {
+//        log.info("================> 게시글 삭제 기능 호출, " + request.getRequestURI());
+//
+//        long postId = Long.parseLong(id);
+//        int affectRows = postRepository.delete(postId);
+//
+//        if (affectRows > 0) log.info("삭제 성공");
+//
+//        return "redirect:/post/v1/show";
+//    }
 
     // ResponseEntity 테스트
     @GetMapping(value = "/test", produces = "text/plain;charset=UTF-8")
