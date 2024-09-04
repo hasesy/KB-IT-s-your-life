@@ -7,10 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>게시판</title>
+</head>
+<body>
+    <%@include file="header.jsp"%>
+    <h1>게시판 페이지입니다!</h1>
+</body>
 </html>

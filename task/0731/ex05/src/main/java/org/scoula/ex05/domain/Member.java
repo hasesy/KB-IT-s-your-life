@@ -4,6 +4,8 @@ public class Member {
     String name;
     String userid;
 
+    public Member() {}
+
     public Member(String name, String userid) {
         this.name = name;
         this.userid = userid;
